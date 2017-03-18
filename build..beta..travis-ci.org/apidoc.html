@@ -1,0 +1,1391 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api-documentation for
+    <a
+        
+        href="http://www.grpc.io/"
+        
+    >grpc (v1.1.2)</a>
+</h1>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.grpc">module grpc</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata">
+            function <span class="apidocSignatureSpan">grpc.</span>Metadata
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Server">
+            function <span class="apidocSignatureSpan">grpc.</span>Server
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.ServerCredentials">
+            function <span class="apidocSignatureSpan">grpc.</span>ServerCredentials
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.closeClient">
+            function <span class="apidocSignatureSpan">grpc.</span>closeClient
+            <span class="apidocSignatureSpan">(client_obj)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.getClientChannel">
+            function <span class="apidocSignatureSpan">grpc.</span>getClientChannel
+            <span class="apidocSignatureSpan">(client)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.load">
+            function <span class="apidocSignatureSpan">grpc.</span>load
+            <span class="apidocSignatureSpan">(filename, format, options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.loadObject">
+            function <span class="apidocSignatureSpan">grpc.</span>loadObject
+            <span class="apidocSignatureSpan">(value, options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.makeGenericClientConstructor">
+            function <span class="apidocSignatureSpan">grpc.</span>makeGenericClientConstructor
+            <span class="apidocSignatureSpan">(methods, serviceName, class_options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.setLogVerbosity">
+            function <span class="apidocSignatureSpan">grpc.</span>setLogVerbosity
+            <span class="apidocSignatureSpan">(verbosity)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.setLogger">
+            function <span class="apidocSignatureSpan">grpc.</span>setLogger
+            <span class="apidocSignatureSpan">(logger)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.waitForClientReady">
+            function <span class="apidocSignatureSpan">grpc.</span>waitForClientReady
+            <span class="apidocSignatureSpan">(client, deadline, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>Metadata.prototype</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>Server.prototype</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>callError</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>credentials</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>logVerbosity</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>propagate</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>status</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>writeFlags</span>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.grpc.Metadata">module grpc.Metadata</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.Metadata">
+            function <span class="apidocSignatureSpan">grpc.</span>Metadata
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata._fromCoreRepresentation">
+            function <span class="apidocSignatureSpan">grpc.Metadata.</span>_fromCoreRepresentation
+            <span class="apidocSignatureSpan">(metadata)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.grpc.Metadata.prototype">module grpc.Metadata.prototype</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype._getCoreRepresentation">
+            function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>_getCoreRepresentation
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype.add">
+            function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>add
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype.clone">
+            function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>clone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype.get">
+            function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>get
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype.getMap">
+            function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>getMap
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype.remove">
+            function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>remove
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype.set">
+            function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>set
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.grpc.Server">module grpc.Server</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Server.Server">
+            function <span class="apidocSignatureSpan">grpc.</span>Server
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.grpc.Server.prototype">module grpc.Server.prototype</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Server.prototype.addProtoService">
+            function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>addProtoService
+            <span class="apidocSignatureSpan">(service, implementation)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Server.prototype.addService">
+            function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>addService
+            <span class="apidocSignatureSpan">(service, implementation)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Server.prototype.bind">
+            function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>bind
+            <span class="apidocSignatureSpan">(port, creds)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.Server.prototype.register">
+            function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>register
+            <span class="apidocSignatureSpan">(name, handler, serialize, deserialize, type)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.grpc.ServerCredentials">module grpc.ServerCredentials</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.ServerCredentials.ServerCredentials">
+            function <span class="apidocSignatureSpan">grpc.</span>ServerCredentials
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.ServerCredentials.createInsecure">
+            function <span class="apidocSignatureSpan">grpc.ServerCredentials.</span>createInsecure
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.ServerCredentials.createSsl">
+            function <span class="apidocSignatureSpan">grpc.ServerCredentials.</span>createSsl
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.grpc.credentials">module grpc.credentials</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.credentials.combineCallCredentials">
+            function <span class="apidocSignatureSpan">grpc.credentials.</span>combineCallCredentials
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.credentials.combineChannelCredentials">
+            function <span class="apidocSignatureSpan">grpc.credentials.</span>combineChannelCredentials
+            <span class="apidocSignatureSpan">(channel_credential)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.credentials.createFromGoogleCredential">
+            function <span class="apidocSignatureSpan">grpc.credentials.</span>createFromGoogleCredential
+            <span class="apidocSignatureSpan">(google_credential)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.credentials.createFromMetadataGenerator">
+            function <span class="apidocSignatureSpan">grpc.credentials.</span>createFromMetadataGenerator
+            <span class="apidocSignatureSpan">(metadata_generator)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.credentials.createInsecure">
+            function <span class="apidocSignatureSpan">grpc.credentials.</span>createInsecure
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.grpc.credentials.createSsl">
+            function <span class="apidocSignatureSpan">grpc.credentials.</span>createSsl
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grpc" id="apidoc.module.grpc">module grpc</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Metadata" id="apidoc.element.grpc.Metadata">
+        function <span class="apidocSignatureSpan">grpc.</span>Metadata
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Metadata() {
+  this._internal_repr = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Server" id="apidoc.element.grpc.Server">
+        function <span class="apidocSignatureSpan">grpc.</span>Server
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Server(options) {
+  this.handlers = {};
+  var handlers = this.handlers;
+  var server = new grpc.Server(options);
+  this._server = server;
+  this.started = false;
+<span class="apidocCodeCommentSpan">  /**
+   * Start the server and begin handling requests
+   * @this Server
+   */
+</span>  this.start = function() {
+    if (this.started) {
+      throw new Error(&#x27;Server is already running&#x27;);
+    }
+    this.started = true;
+    server.start();
+    /**
+     * Handles the SERVER_RPC_NEW event. If there is a handler associated with
+     * the requested method, use that handler to respond to the request. Then
+     * wait for the next request
+     * @param {grpc.Event} event The event to handle with tag SERVER_RPC_NEW
+     */
+    function handleNewCall(err, event) {
+      if (err) {
+        return;
+      }
+      var details = event.new_call;
+      var call = details.call;
+      var method = details.method;
+      var metadata = Metadata._fromCoreRepresentation(details.metadata);
+      if (method === null) {
+        return;
+      }
+      server.requestCall(handleNewCall);
+      var handler;
+      if (handlers.hasOwnProperty(method)) {
+        handler = handlers[method];
+      } else {
+        var batch = {};
+        batch[grpc.opType.SEND_INITIAL_METADATA] =
+            (new Metadata())._getCoreRepresentation();
+        batch[grpc.opType.SEND_STATUS_FROM_SERVER] = {
+          code: grpc.status.UNIMPLEMENTED,
+          details: &#x27;&#x27;,
+          metadata: {}
+        };
+        batch[grpc.opType.RECV_CLOSE_ON_SERVER] = true;
+        call.startBatch(batch, function() {});
+        return;
+      }
+      streamHandlers[handler.type](call, handler, metadata);
+    }
+    server.requestCall(handleNewCall);
+  };
+
+  /**
+   * Gracefully shuts down the server. The server will stop receiving new calls,
+   * and any pending calls will complete. The callback will be called when all
+   * pending calls have completed and the server is fully shut down. This method
+   * is idempotent with itself and forceShutdown.
+   * @param {function()} callback The shutdown complete callback
+   */
+  this.tryShutdown = function(callback) {
+    server.tryShutdown(callback);
+  };
+
+  /**
+   * Forcibly shuts down the server. The server will stop receiving new calls
+   * and cancel all pending calls. When it returns, the server has shut down.
+   * This method is idempotent with itself and tryShutdown, and it will trigger
+   * any outstanding tryShutdown callbacks.
+   */
+  this.forceShutdown = function() {
+    server.forceShutdown();
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.ServerCredentials" id="apidoc.element.grpc.ServerCredentials">
+        function <span class="apidocSignatureSpan">grpc.</span>ServerCredentials
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ServerCredentials() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.closeClient" id="apidoc.element.grpc.closeClient">
+        function <span class="apidocSignatureSpan">grpc.</span>closeClient
+        <span class="apidocSignatureSpan">(client_obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function closeClient(client_obj) {
+  client.getClientChannel(client_obj).close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.getClientChannel" id="apidoc.element.grpc.getClientChannel">
+        function <span class="apidocSignatureSpan">grpc.</span>getClientChannel
+        <span class="apidocSignatureSpan">(client)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getClientChannel = function (client) {
+  return client.$channel;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.load" id="apidoc.element.grpc.load">
+        function <span class="apidocSignatureSpan">grpc.</span>load
+        <span class="apidocSignatureSpan">(filename, format, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function load(filename, format, options) {
+  if (!format) {
+    format = &#x27;proto&#x27;;
+  }
+  var convertFieldsToCamelCaseOriginal = ProtoBuf.convertFieldsToCamelCase;
+  if(options &#x26;&#x26; options.hasOwnProperty(&#x27;convertFieldsToCamelCase&#x27;)) {
+    ProtoBuf.convertFieldsToCamelCase = options.convertFieldsToCamelCase;
+  }
+  var builder;
+  try {
+    switch(format) {
+      case &#x27;proto&#x27;:
+      builder = ProtoBuf.loadProtoFile(filename);
+      break;
+      case &#x27;json&#x27;:
+      builder = ProtoBuf.loadJsonFile(filename);
+      break;
+      default:
+      throw new Error(&#x27;Unrecognized format &#x22;&#x27; + format + &#x27;&#x22;&#x27;);
+    }
+  } finally {
+    ProtoBuf.convertFieldsToCamelCase = convertFieldsToCamelCaseOriginal;
+  }
+  return loadObject(builder.ns, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.loadObject" id="apidoc.element.grpc.loadObject">
+        function <span class="apidocSignatureSpan">grpc.</span>loadObject
+        <span class="apidocSignatureSpan">(value, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadObject(value, options) {
+  var result = {};
+  if (value.className === &#x27;Namespace&#x27;) {
+    _.each(value.children, function(child) {
+      result[child.name] = loadObject(child, options);
+    });
+    return result;
+  } else if (value.className === &#x27;Service&#x27;) {
+    return client.makeProtobufClientConstructor(value, options);
+  } else if (value.className === &#x27;Message&#x27; || value.className === &#x27;Enum&#x27;) {
+    return value.build();
+  } else {
+    return value;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.makeGenericClientConstructor" id="apidoc.element.grpc.makeGenericClientConstructor">
+        function <span class="apidocSignatureSpan">grpc.</span>makeGenericClientConstructor
+        <span class="apidocSignatureSpan">(methods, serviceName, class_options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeGenericClientConstructor = function (methods, serviceName, class_options) {
+  if (!class_options) {
+    class_options = {};
+  }
+<span class="apidocCodeCommentSpan">  /**
+   * Create a client with the given methods
+   * @constructor
+   * @param {string} address The address of the server to connect to
+   * @param {grpc.Credentials} credentials Credentials to use to connect
+   *     to the server
+   * @param {Object} options Options to pass to the underlying channel
+   */
+</span>  function Client(address, credentials, options) {
+    if (!options) {
+      options = {};
+    }
+    /* Append the grpc-node user agent string after the application user agent
+     * string, and put the combination at the beginning of the user agent string
+     */
+    if (options[&#x27;grpc.primary_user_agent&#x27;]) {
+      options[&#x27;grpc.primary_user_agent&#x27;] += &#x27; &#x27;;
+    } else {
+      options[&#x27;grpc.primary_user_agent&#x27;] = &#x27;&#x27;;
+    }
+    options[&#x27;grpc.primary_user_agent&#x27;] += &#x27;grpc-node/&#x27; + version;
+    /* Private fields use $ as a prefix instead of _ because it is an invalid
+     * prefix of a method name */
+    this.$channel = new grpc.Channel(address, credentials, options);
+  }
+
+  _.each(methods, function(attrs, name) {
+    var method_type;
+    if (_.startsWith(name, &#x27;$&#x27;)) {
+      throw new Error(&#x27;Method names cannot start with $&#x27;);
+    }
+    if (attrs.requestStream) {
+      if (attrs.responseStream) {
+        method_type = &#x27;bidi&#x27;;
+      } else {
+        method_type = &#x27;client_stream&#x27;;
+      }
+    } else {
+      if (attrs.responseStream) {
+        method_type = &#x27;server_stream&#x27;;
+      } else {
+        method_type = &#x27;unary&#x27;;
+      }
+    }
+    var serialize = attrs.requestSerialize;
+    var deserialize = attrs.responseDeserialize;
+    var method_func = requester_makers[method_type](
+        attrs.path, serialize, deserialize);
+    if (class_options.deprecatedArgumentOrder) {
+      Client.prototype[name] = deprecated_request_wrap(method_func);
+    } else {
+      Client.prototype[name] = method_func;
+    }
+    // Associate all provided attributes with the method
+    _.assign(Client.prototype[name], attrs);
+  });
+
+  return Client;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.setLogVerbosity" id="apidoc.element.grpc.setLogVerbosity">
+        function <span class="apidocSignatureSpan">grpc.</span>setLogVerbosity
+        <span class="apidocSignatureSpan">(verbosity)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setLogVerbosity(verbosity) {
+  common.logVerbosity = verbosity;
+  grpc.setLogVerbosity(verbosity);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.setLogger" id="apidoc.element.grpc.setLogger">
+        function <span class="apidocSignatureSpan">grpc.</span>setLogger
+        <span class="apidocSignatureSpan">(logger)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setLogger(logger) {
+  common.logger = logger;
+  grpc.setDefaultLoggerCallback(function(file, line, severity,
+                                         message, timestamp) {
+    logger.error(log_template({
+      file: path.basename(file),
+      line: line,
+      severity: severity,
+      message: message,
+      timestamp: timestamp.toISOString()
+    }));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.waitForClientReady" id="apidoc.element.grpc.waitForClientReady">
+        function <span class="apidocSignatureSpan">grpc.</span>waitForClientReady
+        <span class="apidocSignatureSpan">(client, deadline, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waitForClientReady = function (client, deadline, callback) {
+  var checkState = function(err) {
+    if (err) {
+      callback(new Error(&#x27;Failed to connect before the deadline&#x27;));
+      return;
+    }
+    var new_state = client.$channel.getConnectivityState(true);
+    if (new_state === grpc.connectivityState.READY) {
+      callback();
+    } else if (new_state === grpc.connectivityState.FATAL_FAILURE) {
+      callback(new Error(&#x27;Failed to connect to server&#x27;));
+    } else {
+      client.$channel.watchConnectivityState(new_state, deadline, checkState);
+    }
+  };
+  checkState();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grpc.Metadata" id="apidoc.module.grpc.Metadata">module grpc.Metadata</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Metadata.Metadata" id="apidoc.element.grpc.Metadata.Metadata">
+        function <span class="apidocSignatureSpan">grpc.</span>Metadata
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Metadata() {
+  this._internal_repr = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Metadata._fromCoreRepresentation" id="apidoc.element.grpc.Metadata._fromCoreRepresentation">
+        function <span class="apidocSignatureSpan">grpc.Metadata.</span>_fromCoreRepresentation
+        <span class="apidocSignatureSpan">(metadata)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_fromCoreRepresentation = function (metadata) {
+  var newMetadata = new Metadata();
+  if (metadata) {
+    _.forOwn(metadata, function(value, key) {
+      newMetadata._internal_repr[key] = _.clone(value);
+    });
+  }
+  return newMetadata;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grpc.Metadata.prototype" id="apidoc.module.grpc.Metadata.prototype">module grpc.Metadata.prototype</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Metadata.prototype._getCoreRepresentation" id="apidoc.element.grpc.Metadata.prototype._getCoreRepresentation">
+        function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>_getCoreRepresentation
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getCoreRepresentation = function () {
+  return this._internal_repr;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Metadata.prototype.add" id="apidoc.element.grpc.Metadata.prototype.add">
+        function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>add
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (key, value) {
+  key = normalizeKey(key);
+  validate(key, value);
+  if (!this._internal_repr[key]) {
+    this._internal_repr[key] = [];
+  }
+  this._internal_repr[key].push(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Metadata.prototype.clone" id="apidoc.element.grpc.Metadata.prototype.clone">
+        function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>clone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function () {
+  var copy = new Metadata();
+  _.forOwn(this._internal_repr, function(value, key) {
+    copy._internal_repr[key] = _.clone(value);
+  });
+  return copy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Metadata.prototype.get" id="apidoc.element.grpc.Metadata.prototype.get">
+        function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>get
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (key) {
+  key = normalizeKey(key);
+  if (Object.prototype.hasOwnProperty.call(this._internal_repr, key)) {
+    return this._internal_repr[key];
+  } else {
+    return [];
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Metadata.prototype.getMap" id="apidoc.element.grpc.Metadata.prototype.getMap">
+        function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>getMap
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMap = function () {
+  var result = {};
+  _.forOwn(this._internal_repr, function(values, key) {
+    if(values.length &#x3e; 0) {
+      result[key] = values[0];
+    }
+  });
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Metadata.prototype.remove" id="apidoc.element.grpc.Metadata.prototype.remove">
+        function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>remove
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function (key) {
+  key = normalizeKey(key);
+  if (Object.prototype.hasOwnProperty.call(this._internal_repr, key)) {
+    delete this._internal_repr[key];
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Metadata.prototype.set" id="apidoc.element.grpc.Metadata.prototype.set">
+        function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>set
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (key, value) {
+  key = normalizeKey(key);
+  validate(key, value);
+  this._internal_repr[key] = [value];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grpc.Server" id="apidoc.module.grpc.Server">module grpc.Server</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Server.Server" id="apidoc.element.grpc.Server.Server">
+        function <span class="apidocSignatureSpan">grpc.</span>Server
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Server(options) {
+  this.handlers = {};
+  var handlers = this.handlers;
+  var server = new grpc.Server(options);
+  this._server = server;
+  this.started = false;
+<span class="apidocCodeCommentSpan">  /**
+   * Start the server and begin handling requests
+   * @this Server
+   */
+</span>  this.start = function() {
+    if (this.started) {
+      throw new Error(&#x27;Server is already running&#x27;);
+    }
+    this.started = true;
+    server.start();
+    /**
+     * Handles the SERVER_RPC_NEW event. If there is a handler associated with
+     * the requested method, use that handler to respond to the request. Then
+     * wait for the next request
+     * @param {grpc.Event} event The event to handle with tag SERVER_RPC_NEW
+     */
+    function handleNewCall(err, event) {
+      if (err) {
+        return;
+      }
+      var details = event.new_call;
+      var call = details.call;
+      var method = details.method;
+      var metadata = Metadata._fromCoreRepresentation(details.metadata);
+      if (method === null) {
+        return;
+      }
+      server.requestCall(handleNewCall);
+      var handler;
+      if (handlers.hasOwnProperty(method)) {
+        handler = handlers[method];
+      } else {
+        var batch = {};
+        batch[grpc.opType.SEND_INITIAL_METADATA] =
+            (new Metadata())._getCoreRepresentation();
+        batch[grpc.opType.SEND_STATUS_FROM_SERVER] = {
+          code: grpc.status.UNIMPLEMENTED,
+          details: &#x27;&#x27;,
+          metadata: {}
+        };
+        batch[grpc.opType.RECV_CLOSE_ON_SERVER] = true;
+        call.startBatch(batch, function() {});
+        return;
+      }
+      streamHandlers[handler.type](call, handler, metadata);
+    }
+    server.requestCall(handleNewCall);
+  };
+
+  /**
+   * Gracefully shuts down the server. The server will stop receiving new calls,
+   * and any pending calls will complete. The callback will be called when all
+   * pending calls have completed and the server is fully shut down. This method
+   * is idempotent with itself and forceShutdown.
+   * @param {function()} callback The shutdown complete callback
+   */
+  this.tryShutdown = function(callback) {
+    server.tryShutdown(callback);
+  };
+
+  /**
+   * Forcibly shuts down the server. The server will stop receiving new calls
+   * and cancel all pending calls. When it returns, the server has shut down.
+   * This method is idempotent with itself and tryShutdown, and it will trigger
+   * any outstanding tryShutdown callbacks.
+   */
+  this.forceShutdown = function() {
+    server.forceShutdown();
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grpc.Server.prototype" id="apidoc.module.grpc.Server.prototype">module grpc.Server.prototype</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Server.prototype.addProtoService" id="apidoc.element.grpc.Server.prototype.addProtoService">
+        function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>addProtoService
+        <span class="apidocSignatureSpan">(service, implementation)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addProtoService = function (service, implementation) {
+  var options;
+  if (service.grpc_options) {
+    options = service.grpc_options;
+  }
+  this.addService(common.getProtobufServiceAttrs(service, options),
+                  implementation);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Server.prototype.addService" id="apidoc.element.grpc.Server.prototype.addService">
+        function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>addService
+        <span class="apidocSignatureSpan">(service, implementation)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addService = function (service, implementation) {
+  if (!_.isObjectLike(service) || !_.isObjectLike(implementation)) {
+    throw new Error(&#x27;addService requires two objects as arguments&#x27;);
+  }
+  if (_.keys(service).length === 0) {
+    throw new Error(&#x27;Cannot add an empty service to a server&#x27;);
+  }
+  if (this.started) {
+    throw new Error(&#x27;Can\&#x27;t add a service to a started server.&#x27;);
+  }
+  var self = this;
+  _.forOwn(service, function(attrs, name) {
+    var method_type;
+    if (attrs.requestStream) {
+      if (attrs.responseStream) {
+        method_type = &#x27;bidi&#x27;;
+      } else {
+        method_type = &#x27;client_stream&#x27;;
+      }
+    } else {
+      if (attrs.responseStream) {
+        method_type = &#x27;server_stream&#x27;;
+      } else {
+        method_type = &#x27;unary&#x27;;
+      }
+    }
+    var impl;
+    if (implementation[name] === undefined) {
+      common.log(grpc.logVerbosity.ERROR, &#x27;Method handler for &#x27; +
+          attrs.path + &#x27; expected but not provided&#x27;);
+      impl = defaultHandler[method_type];
+    } else {
+      impl = _.bind(implementation[name], implementation);
+    }
+    var serialize = attrs.responseSerialize;
+    var deserialize = attrs.requestDeserialize;
+    var register_success = self.register(attrs.path, impl, serialize,
+                                         deserialize, method_type);
+    if (!register_success) {
+      throw new Error(&#x27;Method handler for &#x27; + attrs.path +
+          &#x27; already provided.&#x27;);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Server.prototype.bind" id="apidoc.element.grpc.Server.prototype.bind">
+        function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>bind
+        <span class="apidocSignatureSpan">(port, creds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bind = function (port, creds) {
+  if (this.started) {
+    throw new Error(&#x27;Can\&#x27;t bind an already running server to an address&#x27;);
+  }
+  return this._server.addHttp2Port(port, creds);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.Server.prototype.register" id="apidoc.element.grpc.Server.prototype.register">
+        function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>register
+        <span class="apidocSignatureSpan">(name, handler, serialize, deserialize, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (name, handler, serialize, deserialize, type) {
+  if (this.handlers.hasOwnProperty(name)) {
+    return false;
+  }
+  this.handlers[name] = {
+    func: handler,
+    serialize: serialize,
+    deserialize: deserialize,
+    type: type
+  };
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grpc.ServerCredentials" id="apidoc.module.grpc.ServerCredentials">module grpc.ServerCredentials</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.ServerCredentials.ServerCredentials" id="apidoc.element.grpc.ServerCredentials.ServerCredentials">
+        function <span class="apidocSignatureSpan">grpc.</span>ServerCredentials
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ServerCredentials() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.ServerCredentials.createInsecure" id="apidoc.element.grpc.ServerCredentials.createInsecure">
+        function <span class="apidocSignatureSpan">grpc.ServerCredentials.</span>createInsecure
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createInsecure = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.ServerCredentials.createSsl" id="apidoc.element.grpc.ServerCredentials.createSsl">
+        function <span class="apidocSignatureSpan">grpc.ServerCredentials.</span>createSsl
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createSsl = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grpc.credentials" id="apidoc.module.grpc.credentials">module grpc.credentials</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.credentials.combineCallCredentials" id="apidoc.element.grpc.credentials.combineCallCredentials">
+        function <span class="apidocSignatureSpan">grpc.credentials.</span>combineCallCredentials
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">combineCallCredentials = function () {
+  var current = arguments[0];
+  for (var i = 1; i &#x3c; arguments.length; i++) {
+    current = current.compose(arguments[i]);
+  }
+  return current;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.credentials.combineChannelCredentials" id="apidoc.element.grpc.credentials.combineChannelCredentials">
+        function <span class="apidocSignatureSpan">grpc.credentials.</span>combineChannelCredentials
+        <span class="apidocSignatureSpan">(channel_credential)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">combineChannelCredentials = function (channel_credential) {
+  var current = channel_credential;
+  for (var i = 1; i &#x3c; arguments.length; i++) {
+    current = current.compose(arguments[i]);
+  }
+  return current;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.credentials.createFromGoogleCredential" id="apidoc.element.grpc.credentials.createFromGoogleCredential">
+        function <span class="apidocSignatureSpan">grpc.credentials.</span>createFromGoogleCredential
+        <span class="apidocSignatureSpan">(google_credential)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createFromGoogleCredential = function (google_credential) {
+  return exports.createFromMetadataGenerator(function(auth_context, callback) {
+    var service_url = auth_context.service_url;
+    google_credential.getRequestMetadata(service_url, function(err, header) {
+      if (err) {
+        common.log(grpc.logVerbosity.INFO, &#x27;Auth error:&#x27; + err);
+        callback(err);
+        return;
+      }
+      var metadata = new Metadata();
+      metadata.add(&#x27;authorization&#x27;, header.Authorization);
+      callback(null, metadata);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.credentials.createFromMetadataGenerator" id="apidoc.element.grpc.credentials.createFromMetadataGenerator">
+        function <span class="apidocSignatureSpan">grpc.credentials.</span>createFromMetadataGenerator
+        <span class="apidocSignatureSpan">(metadata_generator)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createFromMetadataGenerator = function (metadata_generator) {
+  return CallCredentials.createFromPlugin(function(service_url, cb_data,
+                                                   callback) {
+    metadata_generator({service_url: service_url}, function(error, metadata) {
+      var code = grpc.status.OK;
+      var message = &#x27;&#x27;;
+      if (error) {
+        message = error.message;
+        if (error.hasOwnProperty(&#x27;code&#x27;) &#x26;&#x26; _.isFinite(error.code)) {
+          code = error.code;
+        } else {
+          code = grpc.status.UNAUTHENTICATED;
+        }
+        if (!metadata) {
+          metadata = new Metadata();
+        }
+      }
+      callback(code, message, metadata._getCoreRepresentation(), cb_data);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.credentials.createInsecure" id="apidoc.element.grpc.credentials.createInsecure">
+        function <span class="apidocSignatureSpan">grpc.credentials.</span>createInsecure
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createInsecure = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.grpc.credentials.createSsl" id="apidoc.element.grpc.credentials.createSsl">
+        function <span class="apidocSignatureSpan">grpc.credentials.</span>createSsl
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createSsl = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
