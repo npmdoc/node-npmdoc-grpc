@@ -46,406 +46,407 @@
     font-weight: bold;
 }
 </style>
-<h1>api-documentation for
+<h1>api documentation for
     <a
-        
+
         href="http://www.grpc.io/"
-        
-    >grpc (v1.1.2)</a>
+
+    >grpc (v1.2.0)</a>
 </h1>
+<h4>gRPC Library for Node</h4>
 <div class="apidocSectionDiv"><a
     href="#apidoc.tableOfContents"
     id="apidoc.tableOfContents"
 ><h1>table of contents</h1></a><ol>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.grpc">module grpc</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata">
             function <span class="apidocSignatureSpan">grpc.</span>Metadata
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Server">
             function <span class="apidocSignatureSpan">grpc.</span>Server
             <span class="apidocSignatureSpan">(options)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.ServerCredentials">
             function <span class="apidocSignatureSpan">grpc.</span>ServerCredentials
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.closeClient">
             function <span class="apidocSignatureSpan">grpc.</span>closeClient
             <span class="apidocSignatureSpan">(client_obj)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.getClientChannel">
             function <span class="apidocSignatureSpan">grpc.</span>getClientChannel
             <span class="apidocSignatureSpan">(client)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.load">
             function <span class="apidocSignatureSpan">grpc.</span>load
             <span class="apidocSignatureSpan">(filename, format, options)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.loadObject">
             function <span class="apidocSignatureSpan">grpc.</span>loadObject
             <span class="apidocSignatureSpan">(value, options)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.makeGenericClientConstructor">
             function <span class="apidocSignatureSpan">grpc.</span>makeGenericClientConstructor
             <span class="apidocSignatureSpan">(methods, serviceName, class_options)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.setLogVerbosity">
             function <span class="apidocSignatureSpan">grpc.</span>setLogVerbosity
             <span class="apidocSignatureSpan">(verbosity)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.setLogger">
             function <span class="apidocSignatureSpan">grpc.</span>setLogger
             <span class="apidocSignatureSpan">(logger)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.waitForClientReady">
             function <span class="apidocSignatureSpan">grpc.</span>waitForClientReady
             <span class="apidocSignatureSpan">(client, deadline, callback)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>Metadata.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>Server.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>callError</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>credentials</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>logVerbosity</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>propagate</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>status</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grpc.</span>writeFlags</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.grpc.Metadata">module grpc.Metadata</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.Metadata">
             function <span class="apidocSignatureSpan">grpc.</span>Metadata
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata._fromCoreRepresentation">
             function <span class="apidocSignatureSpan">grpc.Metadata.</span>_fromCoreRepresentation
             <span class="apidocSignatureSpan">(metadata)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.grpc.Metadata.prototype">module grpc.Metadata.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype._getCoreRepresentation">
             function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>_getCoreRepresentation
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype.add">
             function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>add
             <span class="apidocSignatureSpan">(key, value)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype.clone">
             function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>clone
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype.get">
             function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>get
             <span class="apidocSignatureSpan">(key)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype.getMap">
             function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>getMap
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype.remove">
             function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>remove
             <span class="apidocSignatureSpan">(key)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Metadata.prototype.set">
             function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>set
             <span class="apidocSignatureSpan">(key, value)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.grpc.Server">module grpc.Server</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Server.Server">
             function <span class="apidocSignatureSpan">grpc.</span>Server
             <span class="apidocSignatureSpan">(options)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.grpc.Server.prototype">module grpc.Server.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Server.prototype.addProtoService">
             function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>addProtoService
             <span class="apidocSignatureSpan">(service, implementation)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Server.prototype.addService">
             function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>addService
             <span class="apidocSignatureSpan">(service, implementation)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Server.prototype.bind">
             function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>bind
             <span class="apidocSignatureSpan">(port, creds)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.Server.prototype.register">
             function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>register
             <span class="apidocSignatureSpan">(name, handler, serialize, deserialize, type)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.grpc.ServerCredentials">module grpc.ServerCredentials</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.ServerCredentials.ServerCredentials">
             function <span class="apidocSignatureSpan">grpc.</span>ServerCredentials
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.ServerCredentials.createInsecure">
             function <span class="apidocSignatureSpan">grpc.ServerCredentials.</span>createInsecure
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.ServerCredentials.createSsl">
             function <span class="apidocSignatureSpan">grpc.ServerCredentials.</span>createSsl
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.grpc.credentials">module grpc.credentials</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.credentials.combineCallCredentials">
             function <span class="apidocSignatureSpan">grpc.credentials.</span>combineCallCredentials
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.credentials.combineChannelCredentials">
             function <span class="apidocSignatureSpan">grpc.credentials.</span>combineChannelCredentials
             <span class="apidocSignatureSpan">(channel_credential)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.credentials.createFromGoogleCredential">
             function <span class="apidocSignatureSpan">grpc.credentials.</span>createFromGoogleCredential
             <span class="apidocSignatureSpan">(google_credential)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.credentials.createFromMetadataGenerator">
             function <span class="apidocSignatureSpan">grpc.credentials.</span>createFromMetadataGenerator
             <span class="apidocSignatureSpan">(metadata_generator)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.credentials.createInsecure">
             function <span class="apidocSignatureSpan">grpc.credentials.</span>createInsecure
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.grpc.credentials.createSsl">
             function <span class="apidocSignatureSpan">grpc.credentials.</span>createSsl
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.grpc" id="apidoc.module.grpc">module grpc</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.grpc.Metadata" id="apidoc.element.grpc.Metadata">
         function <span class="apidocSignatureSpan">grpc.</span>Metadata
@@ -458,9 +459,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.Server" id="apidoc.element.grpc.Server">
         function <span class="apidocSignatureSpan">grpc.</span>Server
@@ -546,9 +547,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.ServerCredentials" id="apidoc.element.grpc.ServerCredentials">
         function <span class="apidocSignatureSpan">grpc.</span>ServerCredentials
@@ -559,9 +560,9 @@
     <li>description and source-code<pre class="apidocCodePre">function ServerCredentials() { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.closeClient" id="apidoc.element.grpc.closeClient">
         function <span class="apidocSignatureSpan">grpc.</span>closeClient
@@ -574,9 +575,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.getClientChannel" id="apidoc.element.grpc.getClientChannel">
         function <span class="apidocSignatureSpan">grpc.</span>getClientChannel
@@ -589,9 +590,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.load" id="apidoc.element.grpc.load">
         function <span class="apidocSignatureSpan">grpc.</span>load
@@ -626,9 +627,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.loadObject" id="apidoc.element.grpc.loadObject">
         function <span class="apidocSignatureSpan">grpc.</span>loadObject
@@ -653,9 +654,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.makeGenericClientConstructor" id="apidoc.element.grpc.makeGenericClientConstructor">
         function <span class="apidocSignatureSpan">grpc.</span>makeGenericClientConstructor
@@ -728,9 +729,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.setLogVerbosity" id="apidoc.element.grpc.setLogVerbosity">
         function <span class="apidocSignatureSpan">grpc.</span>setLogVerbosity
@@ -744,9 +745,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.setLogger" id="apidoc.element.grpc.setLogger">
         function <span class="apidocSignatureSpan">grpc.</span>setLogger
@@ -769,9 +770,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.waitForClientReady" id="apidoc.element.grpc.waitForClientReady">
         function <span class="apidocSignatureSpan">grpc.</span>waitForClientReady
@@ -798,30 +799,30 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.grpc.Metadata" id="apidoc.module.grpc.Metadata">module grpc.Metadata</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.grpc.Metadata.Metadata" id="apidoc.element.grpc.Metadata.Metadata">
         function <span class="apidocSignatureSpan">grpc.</span>Metadata
@@ -834,9 +835,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.Metadata._fromCoreRepresentation" id="apidoc.element.grpc.Metadata._fromCoreRepresentation">
         function <span class="apidocSignatureSpan">grpc.Metadata.</span>_fromCoreRepresentation
@@ -855,14 +856,14 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.grpc.Metadata.prototype" id="apidoc.module.grpc.Metadata.prototype">module grpc.Metadata.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.grpc.Metadata.prototype._getCoreRepresentation" id="apidoc.element.grpc.Metadata.prototype._getCoreRepresentation">
         function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>_getCoreRepresentation
@@ -875,9 +876,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.Metadata.prototype.add" id="apidoc.element.grpc.Metadata.prototype.add">
         function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>add
@@ -895,9 +896,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.Metadata.prototype.clone" id="apidoc.element.grpc.Metadata.prototype.clone">
         function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>clone
@@ -914,9 +915,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.Metadata.prototype.get" id="apidoc.element.grpc.Metadata.prototype.get">
         function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>get
@@ -934,9 +935,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.Metadata.prototype.getMap" id="apidoc.element.grpc.Metadata.prototype.getMap">
         function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>getMap
@@ -955,9 +956,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.Metadata.prototype.remove" id="apidoc.element.grpc.Metadata.prototype.remove">
         function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>remove
@@ -973,9 +974,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.Metadata.prototype.set" id="apidoc.element.grpc.Metadata.prototype.set">
         function <span class="apidocSignatureSpan">grpc.Metadata.prototype.</span>set
@@ -990,14 +991,14 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.grpc.Server" id="apidoc.module.grpc.Server">module grpc.Server</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.grpc.Server.Server" id="apidoc.element.grpc.Server.Server">
         function <span class="apidocSignatureSpan">grpc.</span>Server
@@ -1083,14 +1084,14 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.grpc.Server.prototype" id="apidoc.module.grpc.Server.prototype">module grpc.Server.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.grpc.Server.prototype.addProtoService" id="apidoc.element.grpc.Server.prototype.addProtoService">
         function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>addProtoService
@@ -1108,9 +1109,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.Server.prototype.addService" id="apidoc.element.grpc.Server.prototype.addService">
         function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>addService
@@ -1119,7 +1120,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">addService = function (service, implementation) {
-  if (!_.isObjectLike(service) || !_.isObjectLike(implementation)) {
+  if (!_.isObject(service) || !_.isObject(implementation)) {
     throw new Error(&#x27;addService requires two objects as arguments&#x27;);
   }
   if (_.keys(service).length === 0) {
@@ -1146,9 +1147,16 @@
     }
     var impl;
     if (implementation[name] === undefined) {
-      common.log(grpc.logVerbosity.ERROR, &#x27;Method handler for &#x27; +
-          attrs.path + &#x27; expected but not provided&#x27;);
-      impl = defaultHandler[method_type];
+<span class="apidocCodeCommentSpan">      /* Handle the case where the method is passed with the name exactly as
+         written in the proto file, instead of using JavaScript function
+         naming style */
+</span>      if (implementation[attrs.originalName] === undefined) {
+        common.log(grpc.logVerbosity.ERROR, &#x27;Method handler &#x27; + name + &#x27; for &#x27; +
+            attrs.path + &#x27; expected but not provided&#x27;);
+        impl = defaultHandler[method_type];
+      } else {
+        impl = _.bind(implementation[attrs.originalName], implementation);
+      }
     } else {
       impl = _.bind(implementation[name], implementation);
     }
@@ -1164,9 +1172,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.Server.prototype.bind" id="apidoc.element.grpc.Server.prototype.bind">
         function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>bind
@@ -1182,9 +1190,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.Server.prototype.register" id="apidoc.element.grpc.Server.prototype.register">
         function <span class="apidocSignatureSpan">grpc.Server.prototype.</span>register
@@ -1206,14 +1214,14 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.grpc.ServerCredentials" id="apidoc.module.grpc.ServerCredentials">module grpc.ServerCredentials</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.grpc.ServerCredentials.ServerCredentials" id="apidoc.element.grpc.ServerCredentials.ServerCredentials">
         function <span class="apidocSignatureSpan">grpc.</span>ServerCredentials
@@ -1224,9 +1232,9 @@
     <li>description and source-code<pre class="apidocCodePre">function ServerCredentials() { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.ServerCredentials.createInsecure" id="apidoc.element.grpc.ServerCredentials.createInsecure">
         function <span class="apidocSignatureSpan">grpc.ServerCredentials.</span>createInsecure
@@ -1237,9 +1245,9 @@
     <li>description and source-code<pre class="apidocCodePre">createInsecure = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.ServerCredentials.createSsl" id="apidoc.element.grpc.ServerCredentials.createSsl">
         function <span class="apidocSignatureSpan">grpc.ServerCredentials.</span>createSsl
@@ -1250,14 +1258,14 @@
     <li>description and source-code<pre class="apidocCodePre">createSsl = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.grpc.credentials" id="apidoc.module.grpc.credentials">module grpc.credentials</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.grpc.credentials.combineCallCredentials" id="apidoc.element.grpc.credentials.combineCallCredentials">
         function <span class="apidocSignatureSpan">grpc.credentials.</span>combineCallCredentials
@@ -1274,9 +1282,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.credentials.combineChannelCredentials" id="apidoc.element.grpc.credentials.combineChannelCredentials">
         function <span class="apidocSignatureSpan">grpc.credentials.</span>combineChannelCredentials
@@ -1293,9 +1301,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.credentials.createFromGoogleCredential" id="apidoc.element.grpc.credentials.createFromGoogleCredential">
         function <span class="apidocSignatureSpan">grpc.credentials.</span>createFromGoogleCredential
@@ -1320,9 +1328,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.credentials.createFromMetadataGenerator" id="apidoc.element.grpc.credentials.createFromMetadataGenerator">
         function <span class="apidocSignatureSpan">grpc.credentials.</span>createFromMetadataGenerator
@@ -1353,9 +1361,9 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.credentials.createInsecure" id="apidoc.element.grpc.credentials.createInsecure">
         function <span class="apidocSignatureSpan">grpc.credentials.</span>createInsecure
@@ -1366,9 +1374,9 @@
     <li>description and source-code<pre class="apidocCodePre">createInsecure = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.grpc.credentials.createSsl" id="apidoc.element.grpc.credentials.createSsl">
         function <span class="apidocSignatureSpan">grpc.credentials.</span>createSsl
@@ -1379,8 +1387,8 @@
     <li>description and source-code<pre class="apidocCodePre">createSsl = function () { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocFooterDiv">
