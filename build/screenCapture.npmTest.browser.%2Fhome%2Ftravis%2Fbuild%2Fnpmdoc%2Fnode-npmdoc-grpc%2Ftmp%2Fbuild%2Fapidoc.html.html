@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://www.grpc.io/"
-
-    >grpc (v1.2.3)</a>
+    <a href="http://www.grpc.io/">grpc (v1.2.3)</a>
 </h1>
 <h4>gRPC Library for Node</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.grpc">module grpc</a><ol>
 
@@ -481,7 +474,7 @@
    */
 </span>  this.start = function() {
     if (this.started) {
-      throw new Error(&#x27;Server is already running&#x27;);
+      throw new Error('Server is already running');
     }
     this.started = true;
     server.start();
@@ -512,7 +505,7 @@
             (new Metadata())._getCoreRepresentation();
         batch[grpc.opType.SEND_STATUS_FROM_SERVER] = {
           code: grpc.status.UNIMPLEMENTED,
-          details: &#x27;&#x27;,
+          details: '',
           metadata: {}
         };
         batch[grpc.opType.RECV_CLOSE_ON_SERVER] = true;
@@ -602,23 +595,23 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function load(filename, format, options) {
   if (!format) {
-    format = &#x27;proto&#x27;;
+    format = 'proto';
   }
   var convertFieldsToCamelCaseOriginal = ProtoBuf.convertFieldsToCamelCase;
-  if(options &#x26;&#x26; options.hasOwnProperty(&#x27;convertFieldsToCamelCase&#x27;)) {
+  if(options &amp;&amp; options.hasOwnProperty('convertFieldsToCamelCase')) {
     ProtoBuf.convertFieldsToCamelCase = options.convertFieldsToCamelCase;
   }
   var builder;
   try {
     switch(format) {
-      case &#x27;proto&#x27;:
+      case 'proto':
       builder = ProtoBuf.loadProtoFile(filename);
       break;
-      case &#x27;json&#x27;:
+      case 'json':
       builder = ProtoBuf.loadJsonFile(filename);
       break;
       default:
-      throw new Error(&#x27;Unrecognized format &#x22;&#x27; + format + &#x27;&#x22;&#x27;);
+      throw new Error('Unrecognized format "' + format + '"');
     }
   } finally {
     ProtoBuf.convertFieldsToCamelCase = convertFieldsToCamelCaseOriginal;
@@ -639,14 +632,14 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function loadObject(value, options) {
   var result = {};
-  if (value.className === &#x27;Namespace&#x27;) {
+  if (value.className === 'Namespace') {
     _.each(value.children, function(child) {
       result[child.name] = loadObject(child, options);
     });
     return result;
-  } else if (value.className === &#x27;Service&#x27;) {
+  } else if (value.className === 'Service') {
     return client.makeProtobufClientConstructor(value, options);
-  } else if (value.className === &#x27;Message&#x27; || value.className === &#x27;Enum&#x27;) {
+  } else if (value.className === 'Message' || value.className === 'Enum') {
     return value.build();
   } else {
     return value;
@@ -683,12 +676,12 @@
     /* Append the grpc-node user agent string after the application user agent
      * string, and put the combination at the beginning of the user agent string
      */
-    if (options[&#x27;grpc.primary_user_agent&#x27;]) {
-      options[&#x27;grpc.primary_user_agent&#x27;] += &#x27; &#x27;;
+    if (options['grpc.primary_user_agent']) {
+      options['grpc.primary_user_agent'] += ' ';
     } else {
-      options[&#x27;grpc.primary_user_agent&#x27;] = &#x27;&#x27;;
+      options['grpc.primary_user_agent'] = '';
     }
-    options[&#x27;grpc.primary_user_agent&#x27;] += &#x27;grpc-node/&#x27; + version;
+    options['grpc.primary_user_agent'] += 'grpc-node/' + version;
     /* Private fields use $ as a prefix instead of _ because it is an invalid
      * prefix of a method name */
     this.$channel = new grpc.Channel(address, credentials, options);
@@ -696,20 +689,20 @@
 
   _.each(methods, function(attrs, name) {
     var method_type;
-    if (_.startsWith(name, &#x27;$&#x27;)) {
-      throw new Error(&#x27;Method names cannot start with $&#x27;);
+    if (_.startsWith(name, '$')) {
+      throw new Error('Method names cannot start with $');
     }
     if (attrs.requestStream) {
       if (attrs.responseStream) {
-        method_type = &#x27;bidi&#x27;;
+        method_type = 'bidi';
       } else {
-        method_type = &#x27;client_stream&#x27;;
+        method_type = 'client_stream';
       }
     } else {
       if (attrs.responseStream) {
-        method_type = &#x27;server_stream&#x27;;
+        method_type = 'server_stream';
       } else {
-        method_type = &#x27;unary&#x27;;
+        method_type = 'unary';
       }
     }
     var serialize = attrs.requestSerialize;
@@ -783,14 +776,14 @@
     <li>description and source-code<pre class="apidocCodePre">waitForClientReady = function (client, deadline, callback) {
   var checkState = function(err) {
     if (err) {
-      callback(new Error(&#x27;Failed to connect before the deadline&#x27;));
+      callback(new Error('Failed to connect before the deadline'));
       return;
     }
     var new_state = client.$channel.getConnectivityState(true);
     if (new_state === grpc.connectivityState.READY) {
       callback();
     } else if (new_state === grpc.connectivityState.FATAL_FAILURE) {
-      callback(new Error(&#x27;Failed to connect to server&#x27;));
+      callback(new Error('Failed to connect to server'));
     } else {
       client.$channel.watchConnectivityState(new_state, deadline, checkState);
     }
@@ -948,7 +941,7 @@
     <li>description and source-code<pre class="apidocCodePre">getMap = function () {
   var result = {};
   _.forOwn(this._internal_repr, function(values, key) {
-    if(values.length &#x3e; 0) {
+    if(values.length &gt; 0) {
       result[key] = values[0];
     }
   });
@@ -1018,7 +1011,7 @@
    */
 </span>  this.start = function() {
     if (this.started) {
-      throw new Error(&#x27;Server is already running&#x27;);
+      throw new Error('Server is already running');
     }
     this.started = true;
     server.start();
@@ -1049,7 +1042,7 @@
             (new Metadata())._getCoreRepresentation();
         batch[grpc.opType.SEND_STATUS_FROM_SERVER] = {
           code: grpc.status.UNIMPLEMENTED,
-          details: &#x27;&#x27;,
+          details: '',
           metadata: {}
         };
         batch[grpc.opType.RECV_CLOSE_ON_SERVER] = true;
@@ -1121,28 +1114,28 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">addService = function (service, implementation) {
   if (!_.isObject(service) || !_.isObject(implementation)) {
-    throw new Error(&#x27;addService requires two objects as arguments&#x27;);
+    throw new Error('addService requires two objects as arguments');
   }
   if (_.keys(service).length === 0) {
-    throw new Error(&#x27;Cannot add an empty service to a server&#x27;);
+    throw new Error('Cannot add an empty service to a server');
   }
   if (this.started) {
-    throw new Error(&#x27;Can\&#x27;t add a service to a started server.&#x27;);
+    throw new Error('Can\'t add a service to a started server.');
   }
   var self = this;
   _.forOwn(service, function(attrs, name) {
     var method_type;
     if (attrs.requestStream) {
       if (attrs.responseStream) {
-        method_type = &#x27;bidi&#x27;;
+        method_type = 'bidi';
       } else {
-        method_type = &#x27;client_stream&#x27;;
+        method_type = 'client_stream';
       }
     } else {
       if (attrs.responseStream) {
-        method_type = &#x27;server_stream&#x27;;
+        method_type = 'server_stream';
       } else {
-        method_type = &#x27;unary&#x27;;
+        method_type = 'unary';
       }
     }
     var impl;
@@ -1151,8 +1144,8 @@
          written in the proto file, instead of using JavaScript function
          naming style */
 </span>      if (implementation[attrs.originalName] === undefined) {
-        common.log(grpc.logVerbosity.ERROR, &#x27;Method handler &#x27; + name + &#x27; for &#x27; +
-            attrs.path + &#x27; expected but not provided&#x27;);
+        common.log(grpc.logVerbosity.ERROR, 'Method handler ' + name + ' for ' +
+            attrs.path + ' expected but not provided');
         impl = defaultHandler[method_type];
       } else {
         impl = _.bind(implementation[attrs.originalName], implementation);
@@ -1165,8 +1158,8 @@
     var register_success = self.register(attrs.path, impl, serialize,
                                          deserialize, method_type);
     if (!register_success) {
-      throw new Error(&#x27;Method handler for &#x27; + attrs.path +
-          &#x27; already provided.&#x27;);
+      throw new Error('Method handler for ' + attrs.path +
+          ' already provided.');
     }
   });
 }</pre></li>
@@ -1184,7 +1177,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">bind = function (port, creds) {
   if (this.started) {
-    throw new Error(&#x27;Can\&#x27;t bind an already running server to an address&#x27;);
+    throw new Error('Can\'t bind an already running server to an address');
   }
   return this._server.addHttp2Port(port, creds);
 }</pre></li>
@@ -1275,7 +1268,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">combineCallCredentials = function () {
   var current = arguments[0];
-  for (var i = 1; i &#x3c; arguments.length; i++) {
+  for (var i = 1; i &lt; arguments.length; i++) {
     current = current.compose(arguments[i]);
   }
   return current;
@@ -1294,7 +1287,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">combineChannelCredentials = function (channel_credential) {
   var current = channel_credential;
-  for (var i = 1; i &#x3c; arguments.length; i++) {
+  for (var i = 1; i &lt; arguments.length; i++) {
     current = current.compose(arguments[i]);
   }
   return current;
@@ -1316,12 +1309,12 @@
     var service_url = auth_context.service_url;
     google_credential.getRequestMetadata(service_url, function(err, header) {
       if (err) {
-        common.log(grpc.logVerbosity.INFO, &#x27;Auth error:&#x27; + err);
+        common.log(grpc.logVerbosity.INFO, 'Auth error:' + err);
         callback(err);
         return;
       }
       var metadata = new Metadata();
-      metadata.add(&#x27;authorization&#x27;, header.Authorization);
+      metadata.add('authorization', header.Authorization);
       callback(null, metadata);
     });
   });
@@ -1343,10 +1336,10 @@
                                                    callback) {
     metadata_generator({service_url: service_url}, function(error, metadata) {
       var code = grpc.status.OK;
-      var message = &#x27;&#x27;;
+      var message = '';
       if (error) {
         message = error.message;
-        if (error.hasOwnProperty(&#x27;code&#x27;) &#x26;&#x26; _.isFinite(error.code)) {
+        if (error.hasOwnProperty('code') &amp;&amp; _.isFinite(error.code)) {
           code = error.code;
         } else {
           code = grpc.status.UNAUTHENTICATED;
@@ -1397,3 +1390,4 @@
     ]
 </div>
 </div>
+</body></html>
