@@ -1,7 +1,7 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
     "buildNpmdoc": "grpc",
-    "description": "api documentation for [grpc (v1.2.3)](http://www.grpc.io/) [![npm package](https://img.shields.io/npm/v/npmdoc-grpc.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grpc) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grpc.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grpc)",
+    "description": "#### api documentation for  [grpc (v1.2.4)](http://www.grpc.io/)  [![npm package](https://img.shields.io/npm/v/npmdoc-grpc.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grpc) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grpc.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grpc)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "grpc": "*",
@@ -36,5 +36,5 @@
         "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
         "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
-    "version": "0.0.4"
+    "version": "0.0.5"
 }
